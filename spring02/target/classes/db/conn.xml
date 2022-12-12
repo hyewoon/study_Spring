@@ -7,16 +7,16 @@
 
 <context:property-placeholder location = "classpath:db/db.properties"/>
 
-<bean class ="org.apache.commons.dbcp2.BasicDataSource">
+<bean id='dbcp'  class ="org.apache.commons.dbcp2.BasicDataSource">
 	<property name="driverClassName" value ="${oracle}"/>
 	<property name="url" value ='${url}'/>
-	<property name="username" value ='${username}'/>
-	<property name="password" value ='${password}'/>
+	<property name="username" value ='${hanul.username}'/>
+	<property name="password" value ='${hanul.password}'/>
 	
 </bean>
 
 <!--Mybatis위한 sqlsessionFactory 객체 생성  -->
-<bean class ="org.mybatis.spring.SqlSessionFactoryBean">
+<bean id='factory' class ="org.mybatis.spring.SqlSessionFactoryBean">
 	<property name ="dataSource" ref ='dbcp'/>
 	<property name ="mapperLocations"  value ='classpath:sqlmap/*-mapper.xml'/>
 

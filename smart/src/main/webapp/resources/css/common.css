@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+body{
+	margin : 0 auto;
+	text-align: center;
+	min-width: 1280px;
+}
+ul {
+	list-style-type: none; align-items: center; padding:0
+}
+
+a {
+	cursor: pointer;
+}
+	
+a:link, a:visited {
+	text-decoration: none; color: inherit;
+}
+
+table{
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+
+table tr{
+	height: 46px;
+}
+
+table.tb-list tr{
+	height: 38px;
+}
+
+table th, table td {
+	border: 1px solid #b0b0b0;
+}
+table th {
+	background-color: #f6f6f6;
+}
+
+table a:hover{
+		font-weight: bold;  text-decoration: underline; color: blue;
+	}
+
+select {
+	height: 34px;
+	cursor: pointer;
+	padding-left: 10px; 	
+}
+
+div.btnSet { margin: 20px auto; }
+
+.box {
+	width: 300px;
+	margin: 20px auto;
+	border: 1px solid #aaa;
+	padding: 30px 50px;	
+}
+
+div.btnSet{
+	margin: 20px auto;
+}
+
+a.btn-fill, a.btn-empty {
+	display: inline-block;
+	height: 24px;
+	padding: 3px 15px;
+	border: 1px solid #3367d6;
+	border-radius:3px;
+	
+	
+}
+a.btn-fill{
+	background-color: #3367d6;
+	color: #fff;
+}
+
+a.btn-empty{
+		background-color: #fff;
+		color: #3367d6;
+}
+
+input{
+	height: 30px;
+	padding:0 10px;
+	font-size: 16px;
+}
+
+input[type=radio]{
+	width: 18px;
+	margin: 0 5px 2px;
+	vertical-align :middle;
+}
+
+input:focus{
+	outline:none;  border:1px solid #3367d6;
+	
+}
+label{
+	margin-left:20px
+}
+
+.tb.wrap{
+	overflow-y:auto; height: 500px;
+	margin : 0 auto;
+	
+}
+
+.tb-wrap .tb-list{
+	width: 100%;
+}
+table.td{
+	padding-left: 10px;
+	
+}
+.box li { margin: 10px 0; }
+
+.box input { width: 100%; }
+
+.w-pct80 { width:80% }
+.w-pct60 { width:60% }
+.w-pct40 { width:40% }
+
+.w-px40 { width:40px }
+.w-px60 { width:60px }
+.w-px80 { width:80px }
+.w-px100 { width:100px }
+.w-px120 { width:120px }
+.w-px140 { width:140px }
+.w-px160 { width:160px }
+.w-px180 { width:180px }
+.w-px200 { width:200px }
+.w-px220 { width:220px }
+.w-px250 { width:250px }
+.w-px300 { width:300px }
+.w-px350 { width:350px }
+.w-px400 { width:400px }
+.w-px500 { width:500px }
+.w-px600 { width:600px }
+.w-px700 { width:700px }
+.w-px800 { width:800px }
+.w-px900 { width:900px }
+.w-px1000 { width:1000px }
+.w-px1200 { width:1200px }
+
