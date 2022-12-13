@@ -5,3 +5,6 @@ DAO 에서는 mapper 의 태그 지정
 
 웹브라우저에서 주소요청 -> Controller -> Service -> DAO -> mapper
 화면으로 응답         <-            <-          <-    <-      
+
+
+notice 시뭔스 

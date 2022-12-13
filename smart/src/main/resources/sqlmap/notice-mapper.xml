@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "no">
+
+
+<!--공지글 상제정보  -->
+<select id='info' resultType ="notice.NoticeVO">
+	select * from notice where id = #{id}
+</select>
+
+<!--새 공지글 등록  -->
+<insert id = 'insert'>
+	insert into notice(title, content, writer)
+	values (#{title}, #{content}, #{writer})
+</insert>
+
+
+<!-- 공지글목록조회 -->
+<select id='list' resultType ="notice.NoticeVO">
+	select * from notice order by writedate
+
+</select>
+</mapper>

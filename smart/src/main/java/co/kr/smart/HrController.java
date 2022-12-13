@@ -39,12 +39,12 @@ public class HrController {
 	public String employee( Model model) {
 			
 			
-			//부서목록, 업무목록을 조회한다
-			model.addAttribute("departments", service.hr_department_list());
-			model.addAttribute("jobs", service.hr_job_list());
-		
-			
-			return "employee/new";
+	//부서목록, 업무목록을 조회한다
+	model.addAttribute("departments", service.hr_department_list());
+	model.addAttribute("jobs", service.hr_job_list());
+
+	
+	return "employee/new";
 		
 	}
 	
