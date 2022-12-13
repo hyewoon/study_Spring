@@ -37,7 +37,7 @@
 	
 </table>
 <div class = 'btnSet'>
-	<a class ='btn-fill' href ='modify.no?id=${to.id }'>정보수정</a>
+	<a class ='btn-fill' href ='modify.no?id=${vo.id }'>정보수정</a>
 	<a class ='btn-fill' onclick="fn_delete()">정보삭제</a>
 <!-- 	<a class ='btn-fill' remove>정보삭제</a> -->
 	<a class ='btn-fill' href ='list.no'>목록창</a>
@@ -46,7 +46,7 @@
 <script>
 	function fn_delete(){
 		if(confirm ('[${to.name}] 정말 삭제?')){
-			location ='delete.no?id=${to.id}';
+			location ='delete.no?id=${vo.id}';
 			
 		}
 	}

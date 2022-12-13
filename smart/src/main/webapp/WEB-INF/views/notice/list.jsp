@@ -32,14 +32,14 @@
 		 <th>작성일</th>
 		 <th>조회수</th>	 
 	</tr>
-	<c:forEach items ='${list }' var ='to'>
+	<c:forEach items ='${list }' var ='vo'>
 	<tr>
-		<td>${to.id}</td>
-		<td>${to.title}</td>
-		<td><a href = 'info.no?content=${to.id}'>${to.content}</a></td>
-		<td>${to.writer}</td>
-		<td>${to.writedate}</td>
-		<td>${to.readcnt}</td>
+		<td>${vo.id}</td>
+		<td>${vo.title}</td>
+		<td><a href = 'info.no?content=${vo.id}'>${vo.content}</a></td>
+		<td>${vo.writer}</td>
+		<td>${vo.writedate}</td>
+		<td>${vo.readcnt}</td>
 		
 	</tr>
 	</c:forEach>
