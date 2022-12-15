@@ -28,21 +28,19 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public void notice_update(NoticeVO vo) {
-		// TODO Auto-generated method stub
+		dao.notice_update(vo);
 
 	}
 
 	@Override
 	public void notice_delete(int id) {
-		// TODO Auto-generated method stub
-
+		dao.notice_delete(id);
 	}
 
 
 	@Override
-	public NoticeVO notice_info(String writer ) {
-		
-		return dao.notice_info(writer);
+	public NoticeVO notice_info(int id) {
+		return dao.notice_info(id);
 	}
 
 }

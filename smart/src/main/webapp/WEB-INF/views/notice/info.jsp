@@ -12,32 +12,33 @@
 <table>
 	<tr>
 		<th>사번</th>
-		<td>${to.id}</td>
+		<td>${vo.id}</td>
 	</tr>
 	<tr>
 		<th>제목</th>
-		<td>${to.title}</td>
+		<td>${vo.title}</td>
 	</tr>
 	<tr>
 		<th>내용</th>
-		<td>${to.content}</td>
+		<td>${vo.content}</td>
 	</tr>
 	<tr>
 		<th>작성자</th>
-		<td>${to.writer}</td>
+		<td>${vo.writer}</td>
 	</tr>
 	<tr>
 		<th>작성일</th>
-		<td>${to.writedate}</td>
+		<td>${vo.writedate}</td>
 	</tr>
 	<tr>
 		<th>조회수</th>
-		<td>${to.readcnt}</td>
+		<td>${vo.readcnt}</td>
 	</tr>
 	
 </table>
+
 <div class = 'btnSet'>
-	<a class ='btn-fill' href ='modify.no?id=${to.id }'>정보수정</a>
+	<a class ='btn-fill' href ='modify.no?id=${vo.id }'>정보수정</a>
 	<a class ='btn-fill' onclick="fn_delete()">정보삭제</a>
 <!-- 	<a class ='btn-fill' remove>정보삭제</a> -->
 	<a class ='btn-fill' href ='list.no'>목록창</a>
@@ -45,8 +46,8 @@
 
 <script>
 	function fn_delete(){
-		if(confirm ('[${to.name}] 정말 삭제?')){
-			location ='delete.no?id=${to.id}';
+		if(confirm ('[${vo.content}] 정말 삭제?')){
+			location ='delete.no?id=${vo.id}';
 			
 		}
 	}

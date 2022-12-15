@@ -3,7 +3,6 @@
  <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix ="c" %>  
  <%@ taglib uri ="http://tiles.apache.org/tags-tiles" prefix ="tiles" %>
  
- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +14,7 @@
 	<c:when test="${category eq 'bo'}"><c:set var='title' value='방명록'/></c:when>
 	<c:when test="${category eq 'da'}"><c:set var='title' value='공공데이터'/></c:when>
 	<c:when test="${category eq 'vi'}"><c:set var='title' value='시각화'/></c:when>
+	<c:when test="${category eq 'login'}"><c:set var='title' value='로그인'/></c:when>
 </c:choose>
 <title>스마트 웹&amp;앱 ${title}</title>
 <link rel='icon' type='image/x-icon' href='img/hanul.ico'>
@@ -23,12 +23,11 @@
 <script type="text/javascript" 
 		src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src='js/common.js?<%=new java.util.Date() %>'></script>
+
 </head>
 <body>
-<tiles:insertAttribute name="header" />
 <div style='margin:20px auto'>
 <tiles:insertAttribute name="container" />
 </div>
-<tiles:insertAttribute name="footer" />
 </body>
 </html>

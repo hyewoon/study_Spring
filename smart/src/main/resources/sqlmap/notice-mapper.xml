@@ -3,11 +3,20 @@
 <mapper namespace = "no">
 
 
-<!--공지글 상제정보  -->
-<select id='info' resultType ="notice.NoticeVO">
-	select * from notice where id = #{id}
-</select>
 
+<!--  선택한 고객정보 삭제  -->
+<delete id="delete"> delete from notice where id = #{id} </delete>
+
+<!--  선택한 고객정보 변경저장  -->
+<update id="update"> 
+update notice set id = #{id}, title = #{title}, content = #{content} 
+where id = #{id} 
+</update>
+
+<!-- 공지글 상제정보   -->
+<select id="info" resultType="notice.NoticeVO"> 
+select * from notice where id = #{id} 
+</select>
 <!--새 공지글 등록  -->
 <insert id = 'insert'>
 	insert into notice(title, content, writer)

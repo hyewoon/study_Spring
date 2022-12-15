@@ -14,14 +14,14 @@
 <form method='post' action='update.no'>
 <table>
  <tr><th>사번</th>
- 	<td><input type='text' name='writer' value='${to.writer }'></td>	 
+ 	<td><input type='text' name='writer' value='${vo.writer }'></td>	 
  </tr>
   <tr><th>글제목</th>
- 	<td><input type='text' name='title' value='${to.title }'></td>	 
+ 	<td><input type='text' name='title' value='${vo.title }'></td>	 
  </tr>
  
   <tr><th>내용</th>
- 	<td><input type='text' name='content' value='${to.content }'></td>	 
+ 	<td><input type='text' name='content' value='${vo.content }'></td>	 
  </tr>
  
 </table>

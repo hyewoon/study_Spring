@@ -31,21 +31,19 @@ public class NoticeDAO implements NoticeService {
 
 	@Override
 	public void notice_update(NoticeVO vo) {
-		// TODO Auto-generated method stub
+		sql.update("no.update", vo);
 
 	}
 
 	@Override
 	public void notice_delete(int id) {
-		// TODO Auto-generated method stub
-
+		sql.delete("no.delete", id);
 	}
 
 
 	@Override
-	public NoticeVO notice_info(String writer) {
-		// TODO Auto-generated method stub
-		return null;
+	public NoticeVO notice_info(int id) {
+		return sql.selectOne("no.info", id);
 	}
 
 }

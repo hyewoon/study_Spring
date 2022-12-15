@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import customer.CustomerVO;
 import notice.NoticeService;
 import notice.NoticeVO;
 
@@ -20,28 +21,52 @@ public class NoticeController {
 		
 	}
 	
+	
 	//공지글 삭제
+	@RequestMapping("/delete.no")
+	public String delete(int id) {
+		//비지니스로직
+		//선택한 고객정보를 DB에서 삭제한 후
+		service.notice_delete(id);
+		//응답화면연결
+		return "redirect:list.no";
+	}
+
 	
-	//
+	
+	//공지글수정저장처리
+	@RequestMapping("/update.no")
+	public String  update(NoticeVO vo) {
+		//비즈니스로직
+		//화면에 입력한정보를 db에 변경저장한 후
+		service.notice_update(vo);
+		//응답화면연결
+		return "redirect:info.no?id=" + vo.getId();
+		//아이디에 해당하는 값이 전달된다
+	}
 	
 	
+	
+
+	//공지글 수정화면 요청
+	@RequestMapping("/modify.no")
+	public String modify(int id, Model model) {
+		
+		NoticeVO vo = service.notice_info(id);
+		model.addAttribute("vo", vo);
+		return "notice/modify";
+		
+	}	
+	
+
 	//공지글 정보화면 요청
 	@RequestMapping("/info.no")
-	public String info(String writer, Model model) {
-		
-		NoticeVO vo = service.notice_info(writer);
+	public String info(int content, Model model) {
+		NoticeVO vo = service.notice_info(content);
 		model.addAttribute("vo", vo);
 		return "notice/info";
 	}
 	
-	//공지글 수정
-	@RequestMapping("/modify.no")
-	public String modify(String writer, Model model) {
-		
-		NoticeVO vo = service.notice_info(writer);
-		model.addAttribute("vo", vo);
-		return "notice/modify";
-	}
 	
 	//새 공지글 등록하고 DB에 저장하는 처리
 	@RequestMapping("/insert.no")
