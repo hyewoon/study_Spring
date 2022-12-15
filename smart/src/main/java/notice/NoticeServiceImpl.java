@@ -22,14 +22,13 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public List<NoticeVO> notice_list() {
-		// TODO Auto-generated method stub
+	
 		return dao.notice_list();
 	}
 
 	@Override
 	public void notice_update(NoticeVO vo) {
 		dao.notice_update(vo);
-
 	}
 
 	@Override
