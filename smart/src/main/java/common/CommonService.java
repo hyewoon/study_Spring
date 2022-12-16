@@ -1,10 +1,15 @@
 package common;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
-import org.apache.commons.mail.EmailException;
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.mail.HtmlEmail;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +18,76 @@ import member.MemberVO;
 
 @Service
 public class CommonService {
+	//요청 url의 contextpath
+	
+	
+	public String requestAPI(String apiURL, String property) {
+		 try {
+			 
+		      URL url = new URL(apiURL);
+		      HttpURLConnection con = (HttpURLConnection)url.openConnection();
+		      con.setRequestMethod("GET");
+		      con.setRequestProperty("Authorization", property);
+		      int responseCode = con.getResponseCode();
+		      BufferedReader br;
+		      System.out.print("responseCode="+responseCode);
+		      if(responseCode==200) { // 정상 호출
+		        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		      } else {  // 에러 발생
+		        br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+		      }
+		      String inputLine;
+		      StringBuffer res = new StringBuffer();
+		      while ((inputLine = br.readLine()) != null) {
+		        res.append(inputLine);
+		      }
+		      br.close();
+		      apiURL =  res.toString();
+		      	
+		    } catch (Exception e) {
+		      System.out.println(e);
+		    }
+		 return apiURL;
+	}
+	
+	
+	
+	
+	public String requestAPI(String apiURL) {
+		 try {
+			 
+		      URL url = new URL(apiURL);
+		      HttpURLConnection con = (HttpURLConnection)url.openConnection();
+		      con.setRequestMethod("GET");
+		      int responseCode = con.getResponseCode();
+		      BufferedReader br;
+		      System.out.print("responseCode="+responseCode);
+		      if(responseCode==200) { // 정상 호출
+		        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		      } else {  // 에러 발생
+		        br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+		      }
+		      String inputLine;
+		      StringBuffer res = new StringBuffer();
+		      while ((inputLine = br.readLine()) != null) {
+		        res.append(inputLine);
+		      }
+		      br.close();
+		      apiURL =  res.toString();
+		      	
+		    } catch (Exception e) {
+		      System.out.println(e);
+		    }
+		 return apiURL;
+	}
+	
+	
+	public String appURL(HttpServletRequest request) {
+		return request.getRequestURL().toString().replace(request.getServletPath(), "");
+		
+	}
+	
+	
 	//솔트 생성 메소드
 	
 	public String generateSalt() {

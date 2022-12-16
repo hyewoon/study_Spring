@@ -6,22 +6,22 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//이메소드는 컨드롤러가 호출한다
 @Service("member")
 public class MemberImpl implements MemberService {
-
 	@Autowired private MemberDAO dao;
+//	private MemberDAO dao;
+//	public MemberServiceImpl(MemberDAO dao) {
+//		this.dao = dao;
+//	}
 	
 	
 	@Override
 	public int member_join(MemberVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.member_join(vo);
 	}
 
 	@Override
 	public MemberVO member_login(HashMap<String, String> map) {
-		// TODO Auto-generated method stub
 		return dao.member_login(map);
 	}
 
@@ -33,13 +33,11 @@ public class MemberImpl implements MemberService {
 
 	@Override
 	public int member_idCheck(String userid) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.member_idCheck(userid);
 	}
 
 	@Override
 	public int member_myInfo_update(MemberVO vo) {
-		// TODO Auto-generated method stub
 		return dao.member_myInfo_update(vo);
 	}
 
@@ -51,21 +49,22 @@ public class MemberImpl implements MemberService {
 
 	@Override
 	public List<MemberVO> member_list() {
-		// TODO Auto-generated method stub
 		return dao.member_list();
 	}
 
 	@Override
 	public String member_salt(String userid) {
-		// TODO Auto-generated method stub
 		return dao.member_salt(userid);
 	}
 
 	@Override
 	public String member_userid_email(MemberVO vo) {
-		// TODO Auto-generated method stub
 		return dao.member_userid_email(vo);
 	}
+
+	@Override
+	public int member_password_update(MemberVO vo) {
+		return dao.member_password_update(vo);
+	}
+
 }
-
-

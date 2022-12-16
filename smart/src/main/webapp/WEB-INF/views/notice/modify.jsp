@@ -9,7 +9,7 @@
 </head>
 <body>
 <h3>공지글 수정</h3>
-
+<!--제목 클릭시 정보수정화면 요청 -->
 
 <form method='post' action='update.no'>
 <table>
