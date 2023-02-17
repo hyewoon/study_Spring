@@ -1,0 +1,34 @@
+winter/ Winter1
+admin/Kim12
+
+----단체
+itstudydev
+Itstudy202
+
+Controller 에서는 Service의 method 호출
+
+Service 에서는 DAO의 method 호출
+DAO 에서는 mapper 의 태그 지정
+
+
+웹브라우저에서 주소요청 -> Controller -> Service -> DAO -> mapper
+화면으로 응답         <-            <-          <-    <-      
+
+
+
+암호화에 사용할 salt 컬럼 추가
+alter table member add ( salt varchar2(300) );
+
+로그인 과 회원가입시 둘 다 사용
+
+salt: 비밀번호를 해시 처리하는 단방향 함수의 추가 입력에 사용되는 랜덤값
+회원가입시 비밀번호를 암호화하고, 암호화에 사용한 salt 와 암호화된 비밀번호를 저장하도록 한다
+
+암호화  --> 복호화 : 양방향 처리
+: 예전에는 비밀번호 잊어버리면 메일로 비밀번호 알려준다
+
+최근에는 :  단방향처리
+: 비번 잊어버리면 임시비밀번호 전달
+
+manager --> abc111  ---> manager
+
